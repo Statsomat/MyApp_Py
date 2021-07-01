@@ -1,0 +1,44 @@
+---
+title: ""
+---
+
+```{r,  results="asis", eval = eval_rows, echo = FALSE}
+text <- "# Empty rows w.r.t. selected variables
+rows_drop = ["
+code <- paste0(text,paste0(paste(rows_drop-1, collapse = ','), "]"))
+codechunk(code, style=list("background-color"="#FFFFFF"))
+```
+
+```{r, eval = FALSE, echo = eval_rows}
+# Drop empty rows
+df.drop(df.index[rows_drop], inplace = True)
+```
+
+```{r,  results="asis", eval = eval_num, echo = FALSE}
+text <- "# Column indices of selected continuous variables
+cols_continuous = ["
+indices <- which(colnames(df_code) %in% colnames(df_num))
+indices <- indices-1
+code <- paste0(text,paste0(paste(indices, collapse = ','), "]"))
+codechunk(code, style=list("background-color"="#FFFFFF"))
+```
+
+```{r, eval = FALSE, echo = eval_num}
+# Data frame of the continuous variables
+df_num = df.iloc[:,cols_continuous]
+```
+
+```{r, results="asis", eval = eval_factor, echo = FALSE}
+text <- "# Column indices of selected discrete variables
+cols_discrete = ["
+indices <- which(colnames(df_code) %in% colnames(df_factor))
+indices <- indices-1
+code <- paste0(text,paste0(paste(indices, collapse = ','), "]"))
+codechunk(code, style=list("background-color"="#FFFFFF"))
+```
+
+```{r, eval = FALSE, echo = eval_factor}
+# Data frame of the discrete variables
+df_cat = df.iloc[:,cols_discrete]
+```
+
