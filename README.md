@@ -5,7 +5,9 @@ For contributors to the [Statsomat](https://statsomat.com) portal: Container for
 Start with the files:
  
 ```
-global.R
 server.R
 report.R 
+report_kernel.R
 ```
+
+Other core files: `global.R` (global settings), `ui.R` (contains the GUI).  
