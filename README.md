@@ -8,8 +8,8 @@ To integrate your automated data analysis, start with the files:
  
 ```
 server.R
-report.Rmd 
-report_kernel.Rmd
+report.Rmd (calls report_kernel.Rmd)
+report_code_container.Rmd (calls report_code.Rmd)
 ```
 
 Other core files: `global.R` (global settings), `ui.R` (contains the GUI).  
